@@ -2,7 +2,7 @@ con <- file("stdin", open = "r")
 delays <- numeric(0) # vector of departure delays
 lastKey <- ""
 while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
-split <- unlist(strsplit("19690|2014|04 	 -50", "\t"))
+split <- unlist(strsplit(line, "\t"))
 key <- split[[1]]
 deptDelay <- as.numeric(split[[2]])
     
